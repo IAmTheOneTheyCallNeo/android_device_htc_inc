@@ -92,52 +92,96 @@ git fetch https://android.googlesource.com/platform/dalvik refs/changes/29/55129
 
 ### Optional: Linaro building
 First, you'll want to pull in these commits
+
 ```bash
+
 # Linaro
-cd ~/android/cm10/libcore
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_libcore refs/changes/88/31388/1 && git cherry-pick FETCH_HEAD
-cd ~/android/cm10/frameworks/wilhelm
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_wilhelm refs/changes/90/31390/1 && git cherry-pick FETCH_HEAD
-cd ~/android/cm10/frameworks/ex
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_ex refs/changes/92/31392/1 && git cherry-pick FETCH_HEAD
-cd ~/android/cm10/frameworks/base
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_base refs/changes/93/31393/1 && git cherry-pick FETCH_HEAD
-cd ~/android/cm10/frameworks/av
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_av refs/changes/94/31394/1 && git cherry-pick FETCH_HEAD
-cd ~/android/cm10/external/webkit
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_external_webkit refs/changes/95/31395/1 && git cherry-pick FETCH_HEAD
-cd ~/android/cm10/external/skia
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_external_skia refs/changes/98/31398/1 && git cherry-pick FETCH_HEAD
-cd ~/android/cm10/external/stlport
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_external_stlport refs/changes/97/31397/1 && git cherry-pick FETCH_HEAD
-cd ~/android/cm10/external/openvpn
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_external_openvpn refs/changes/99/31399/1 && git cherry-pick FETCH_HEAD
-cd ~/android/cm10/external/openssl
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_external_openssl refs/changes/00/31400/1 && git cherry-pick FETCH_HEAD
-cd ~/android/cm10/external/openssh
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_external_openssh refs/changes/01/31401/1 && git cherry-pick FETCH_HEAD
-cd ~/android/cm10/external/lsof
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_external_lsof refs/changes/02/31402/1 && git cherry-pick FETCH_HEAD
-cd ~/android/cm10/external/e2fsprogs
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_external_e2fsprogs refs/changes/03/31403/1 && git cherry-pick FETCH_HEAD
-cd ~/android/cm10/external/dnsmasq
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_external_dnsmasq refs/changes/04/31404/1 && git cherry-pick FETCH_HEAD
-cd ~/android/cm10/external/chromium
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_external_chromium refs/changes/05/31405/1 && git cherry-pick FETCH_HEAD
-cd ~/android/cm10/external/bluetooth/bluedroid
+
+# cd into to root of your rom project
+
+
+
+cd bluetooth/bluedroid
 git fetch http://review.cyanogenmod.org/CyanogenMod/android_external_bluetooth_bluedroid refs/changes/07/31407/1 && git cherry-pick FETCH_HEAD
-cd ~/android/cm10/external/v8
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_external_v8 refs/changes/96/31396/1 && git cherry-pick FETCH_HEAD
-cd ~/android/cm10/external/ping
+
+cd ../../build
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_build refs/changes/08/31408/1 && git cherry-pick FETCH_HEAD
+
+cd ../external/chromium
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_external_chromium refs/changes/05/31405/1 && git cherry-pick FETCH_HEAD
+
+cd ../dnsmasq
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_external_dnsmasq refs/changes/04/31404/1 && git cherry-pick FETCH_HEAD
+
+cd ../e2fsprogs
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_external_e2fsprogs refs/changes/03/31403/1 && git cherry-pick FETCH_HEAD
+
+cd ../lsof
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_external_lsof refs/changes/02/31402/1 && git cherry-pick FETCH_HEAD
+
+cd ../openssh
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_external_openssh refs/changes/01/31401/1 && git cherry-pick FETCH_HEAD
+
+cd ../openssl
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_external_openssl refs/changes/00/31400/1 && git cherry-pick FETCH_HEAD
+
+cd ../openvpn
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_external_openvpn refs/changes/99/31399/1 && git cherry-pick FETCH_HEAD
+
+cd ../oprofile
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_external_oprofile refs/changes/45/31445/3 && git cherry-pick FETCH_HEAD
+
+cd ../ping
 git fetch http://review.cyanogenmod.org/CyanogenMod/android_external_ping refs/changes/09/31409/1 && git cherry-pick FETCH_HEAD
-cd ~/android/cm10/external/ping6
+
+cd ../ping6
 git fetch http://review.cyanogenmod.org/CyanogenMod/android_external_ping6 refs/changes/10/31410/1 && git cherry-pick FETCH_HEAD
-cd ~/android/cm10/system/security
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_system_security refs/changes/11/31411/1 && git cherry-pick FETCH_HEAD
-cd ~/android/cm10/external/wpa_supplicant_8
+
+cd ../skia
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_external_skia refs/changes/98/31398/1 && git cherry-pick FETCH_HEAD
+
+cd ../stlport
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_external_stlport refs/changes/97/31397/1 && git cherry-pick FETCH_HEAD
+
+cd ../v8
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_external_v8 refs/changes/96/31396/1 && git cherry-pick FETCH_HEAD
+
+cd ../webkit
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_external_webkit refs/changes/95/31395/1 && git cherry-pick FETCH_HEAD
+
+cd ../wpa_supplicant_8
 git fetch http://review.cyanogenmod.org/CyanogenMod/android_external_wpa_supplicant_8 refs/changes/12/31412/1 && git cherry-pick FETCH_HEAD
-cd ~/android/cm10/frameworks/rs
+
+cd ../../frameworks/av
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_av refs/changes/94/31394/1 && git cherry-pick FETCH_HEAD
+
+cd ../base
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_base refs/changes/93/31393/1 && git cherry-pick FETCH_HEAD
+
+cd ../ex
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_ex refs/changes/92/31392/1 && git cherry-pick FETCH_HEAD
+
+cd ../native
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_native refs/changes/91/31391/1 && git cherry-pick FETCH_HEAD
+
+cd ../rs
 git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_rs refs/changes/15/31415/1 && git cherry-pick FETCH_HEAD
+
+cd ..wilhelm
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_wilhelm refs/changes/90/31390/1 && git cherry-pick FETCH_HEAD
+
+cd ../../hardware/qcom/display-caf
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_hardware_qcom_display-caf refs/changes/89/31389/1 && git cherry-pick FETCH_HEAD
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_hardware_qcom_display-caf refs/changes/13/31413/1 && git cherry-pick FETCH_HEAD
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_hardware_qcom_display-caf refs/changes/41/31441/1 && git cherry-pick FETCH_HEAD
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_hardware_qcom_display-caf refs/changes/42/31442/1 && git cherry-pick FETCH_HEAD
+
+cd ../../../libwebcore
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_libcore refs/changes/88/31388/1 && git cherry-pick FETCH_HEAD
+
+cd ../system/security
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_system_security refs/changes/11/31411/1 && git cherry-pick FETCH_HEAD
+
 ```
 Then set the environment variables as shown below
 ```bash
